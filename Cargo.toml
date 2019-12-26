@@ -1,0 +1,56 @@
+[package]
+name = "unl-implementation-rust"
+version = "0.0.1"
+authors = ["hasezoey <hasezoey@gmail.com>"]
+edition = "2018"
+license = "MIT"
+
+[dependencies]
+nom = "5.0.1"
+clap = "2.33.0"
+serde = "1.0.104"
+serde_derive = "1.0.104"
+
+[[bench]]
+name = "unl-impl-rust"
+harness = false
+
+[dev-dependencies]
+criterion = "0.3.0"
+
+[profile.dev]
+opt-level = 0
+debug = true
+incremental = true
+overflow-checks = true
+codegen-units = 16
+
+[profile.test]
+opt-level = 0
+debug = 2
+rpath = false
+lto = false
+debug-assertions = true
+codegen-units = 16
+panic = 'unwind'
+incremental = true
+overflow-checks = true
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = false
+debug-assertions = false
+codegen-units = 16
+panic = 'unwind'
+incremental = false
+overflow-checks = false
+
+[lib]
+name = "libunlrust"
+path = "src/lib.rs"
+
+[[bin]]
+name = "unl-implementation-rust"
+path = "src/bin.rs"
