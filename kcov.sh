@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This file is Copy-Pasted from https://github.com/codecov/example-rust#travis-setup (into file form)
 
 wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&

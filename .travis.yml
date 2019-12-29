@@ -4,10 +4,6 @@ rust:
   - beta
   - nightly
 
-matrix:
-  allow_failures:
-    - rust: nightly
-
 addons:
   apt:
     packages:
@@ -19,6 +15,8 @@ addons:
       - binutils-dev
       - libiberty-dev
 
+cache: cargo
+
 after_success: ./kcov.sh
 
 stages:
@@ -26,6 +24,8 @@ stages:
   - deploy
 
 jobs:
+  allow_failures:
+    - rust: nightly
   fast_finish: true
 #   include: # disable for now, while not having a gh-page
 #     - name: 'Deploy to GitHub Pages'
