@@ -1,0 +1,80 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in library 'libunlrust'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--lib",
+					"--package=unl-implementation-rust"
+				],
+				"filter": {
+					"name": "libunlrust",
+					"kind": "lib"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'unl-implementation-rust'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=unl-implementation-rust",
+					"--package=unl-implementation-rust"
+				],
+				"filter": {
+					"name": "unl-implementation-rust",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'unl-implementation-rust'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=unl-implementation-rust",
+					"--package=unl-implementation-rust"
+				],
+				"filter": {
+					"name": "unl-implementation-rust",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug benchmark 'unl-impl-rust'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bench=unl-impl-rust",
+					"--package=unl-implementation-rust"
+				],
+				"filter": {
+					"name": "unl-impl-rust",
+					"kind": "bench"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}
