@@ -10,9 +10,9 @@ nom = "5.0.1"
 clap = "2.33.0"
 serde = { version = "1.0.104", features = ["derive"] }
 
-[[bench]]
-name = "unl-impl-rust"
-harness = false
+# [[bench]]
+# name = "unl-impl-rust"
+# harness = false
 
 [dev-dependencies]
 criterion = "0.3.0"
